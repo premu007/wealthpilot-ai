@@ -37,7 +37,7 @@ Keep it concise, professional, and structured in bullet points.
 
     # CHANGED: was client.messages.create(model="claude-haiku-...")
     response = client.chat.completions.create(
-        model="llama3-8b-8192",                # free Groq model
+        model="llama-3.3-70b-versatile",               # free Groq model
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7
     )
