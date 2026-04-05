@@ -10,8 +10,8 @@ st.set_page_config(page_title="WealthPilot AI", layout="wide")
 BACKEND_URL = st.secrets.get("BACKEND_URL") or os.getenv("BACKEND_URL", "http://localhost:8000")
 
 # ------------------- HEADER -------------------
-st.title("ðŸ’¼ WealthPilot AI")
-st.subheader("GenAI Copilot for Wealth Advisors â€” Powered by Groq + Llama 3")
+st.title("WealthPilot AI")
+st.subheader("GenAI Copilot for Wealth Advisors” Powered by Groq + Llama 3")
 
 # ------------------- SIDEBAR -------------------
 st.sidebar.header("Client Profile")
@@ -42,21 +42,21 @@ st.sidebar.info(
 )
 
 # ------------------- PORTFOLIO SUMMARY -------------------
-st.write("### ðŸ“Š Portfolio Summary")
+st.write("### Portfolio Summary")
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Equity", f"{equity}%")
 col2.metric("Debt",   f"{debt}%")
 col3.metric("Gold",   f"{gold}%")
 col4.metric("Total",  f"{equity + debt + gold}%",
-            delta="Valid âœ…" if (equity + debt + gold) == 100 else "Invalid âŒ")
+            delta="Valid " if (equity + debt + gold) == 100 else "Invalid âŒ")
 
 # ------------------- PIE CHART -------------------
 fig = go.Figure(data=[go.Pie(
     labels=["Equity", "Debt", "Gold"],
     values=[equity, debt, gold],
     hole=0.45,
-    marker_colors=["#4F8EF7", "#F7C948", "#6FCF97"],
+    marker_colors=["#4F8EF7", "#F7C948 "#6FCF97"],
     textinfo="label+percent",
     hovertemplate="%{label}: %{value}%<extra></extra>"
 )])
@@ -67,7 +67,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 # ------------------- RULE-BASED INSIGHTS -------------------
-st.write("### ðŸ” Rule-Based Insights")
+st.write("###” Rule-Based Insights")
 insights = []
 if equity > 70 and risk != "High":
     insights.append("âš ï¸ High equity exposure for your risk profile")
